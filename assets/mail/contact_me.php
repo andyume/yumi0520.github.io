@@ -1,14 +1,14 @@
 <?php
 // Check for empty fields
-if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+if(empty($_GET['name']) || empty($_GET['email']) || empty($_GET['phone']) || empty($_GET['message']) || !filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
 }
 
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email = strip_tags(htmlspecialchars($_POST['email']));
-$phone = strip_tags(htmlspecialchars($_POST['phone']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
+$name = strip_tags(htmlspecialchars($_GET['name']));
+$email = strip_tags(htmlspecialchars($_GET['email']));
+$phone = strip_tags(htmlspecialchars($_GET['phone']));
+$message = strip_tags(htmlspecialchars($_GET['message']));
 
 // Create the email and send the message
 $to = "ohyumi0520@gmail.com"; // Add your email address in between the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
